@@ -1,5 +1,4 @@
 from flask import Flask
-import os
 
 from routers.health_check_router import health_check
 
