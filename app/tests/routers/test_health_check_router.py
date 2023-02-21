@@ -1,6 +1,7 @@
 import unittest
 import pytest
 
+
 @pytest.mark.usefixtures("client")
 class TestHealthCheckRouter(unittest.TestCase):
 

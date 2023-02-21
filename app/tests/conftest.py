@@ -2,6 +2,7 @@ import pytest
 
 from main import app
 
+
 @pytest.fixture(scope="class")
 def client(request):
     app.config['TESTING'] = True
