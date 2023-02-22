@@ -22,4 +22,50 @@
     ├── ...
 ```
 
-In resources
+# Start Application for Development
+
+You can either use python locally by running:
+
+```sh
+python app/app.py
+```
+
+Or you can use the docker container by running:
+
+```sh
+docker build -t peak_power
+docker run -ti peak_power
+```
+
+# Start Application for Deployment
+
+You can start the app using the docker compose file by running:
+
+```sh
+docker-compose up
+```
+
+# Use the app
+
+Simply by executing a curl such as:
+
+```sh
+curl -X POST -H "Content-Type: application/json" localhost:5000/text-statistic -d'{"text": "hello world"}'
+{
+  "aggregation": [
+    {
+      "count": 1,
+      "word": "hello"
+    },
+    {
+      "count": 1,
+      "word": "world"
+    }
+  ],
+  "number_of_words": 2,
+  "text_length": {
+    "with_no_spaces": 10,
+    "with_spaces": 11
+  }
+}
+```
