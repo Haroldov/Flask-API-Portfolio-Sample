@@ -7,12 +7,13 @@ import numpy as np
 import enchant
 import re
 
+
 class TextResource:
     """Class that handles text to get statistics."""
 
     def __init__(self, text: str):
         """Class constructor.
-        
+
         Initializes the English dictionary to check for english words.
         """
         self.dictionary = enchant.Dict("en_US")
@@ -39,11 +40,10 @@ class TextResource:
         ]
 
         filtered_words = [
-            word for word in bag_of_words if self.dictionary.check(word) is True
+            word for word in bag_of_words if self.dictionary.check(word)
         ]
 
         self._text = filtered_words
-
 
     def compute_count_and_sort(self):
         """Compute count of the the words from text and sort alphabetically."""

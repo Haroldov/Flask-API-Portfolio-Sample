@@ -14,7 +14,6 @@ class TestTextParserRouter(unittest.TestCase):
 
         self.assertEqual(rv.status_code, 200)
 
-
     def test_text_router_words_count_400(self):
         """Test that words counter respond bad request."""
 

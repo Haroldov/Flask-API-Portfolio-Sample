@@ -1,5 +1,5 @@
 from flask import request
-from services.text_service import TextService
+
 
 class TextRouter():
     """Class handling HTTP validations from request."""
@@ -60,7 +60,6 @@ class TextRouter():
 
         return fmt_response, 200
 
-
     def text_statistic(self):
         body = request.json
 
@@ -73,7 +72,10 @@ class TextRouter():
 
         fmt_response = {
             "aggregation": [
-                {"word": word, "count": int(count)} for word, count in words_count
+                {
+                    "word": word,
+                    "count": int(count)
+                } for word, count in words_count
             ]
         }
 

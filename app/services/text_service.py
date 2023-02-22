@@ -6,9 +6,6 @@ from functools import lru_cache
 
 from resources.text_parser_resource import TextResource
 
-import numpy as np
-import enchant
-import re
 
 class TextService:
     """Class that handles text to parse it using resource."""

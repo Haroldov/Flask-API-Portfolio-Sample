@@ -2,6 +2,7 @@ import unittest
 
 from services.text_service import TextService
 
+
 class TestTextParserResource(unittest.TestCase):
 
     def test_text_service_returns_correct_count(self):
@@ -39,4 +40,3 @@ class TestTextParserResource(unittest.TestCase):
         full_size, full_size_no_spaces = service.text_length(text)
 
         self.assertEqual(full_size, len(text))
-
