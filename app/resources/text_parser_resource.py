@@ -39,16 +39,15 @@ class TextResource:
             word for word in bag_of_words if len(word) != 0
         ]
 
-        filtered_words = [
-            word for word in bag_of_words if self.dictionary.check(word)
-        ]
-
-        self._text = filtered_words
+        self._text = bag_of_words
 
     def compute_count_and_sort(self):
         """Compute count of the the words from text and sort alphabetically."""
+        filtered_words = [
+            word for word in self.text if self.dictionary.check(word)
+        ]
 
-        unique, counts = np.unique(self.text, return_counts=True)
+        unique, counts = np.unique(filtered_words, return_counts=True)
 
         return sorted(list(zip(unique, counts)), key=lambda row: row[0])
 

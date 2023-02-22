@@ -40,9 +40,9 @@ class TestTextParserResource(unittest.TestCase):
         """
         expected_parse = [
             "life", "is", "a", "journey", "full", "of", "ups", "and", "downs",
-            "it's", "important", "to", "enjoy", "the", "good", "moments",
-            "and", "learn", "from", "the", "bad", "ones"
+            "it's", "important", "to", "enjoy", "good", "moments",
+            "learn", "from", "the", "bad", "ones"
         ]
 
-        r = TextResource(text)
-        self.assertEqual(r.text, expected_parse)
+        r = TextResource(text).compute_count_and_sort()
+        self.assertEqual([word for word, count in r], sorted(expected_parse))
