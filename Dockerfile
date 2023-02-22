@@ -1,7 +1,10 @@
-FROM python:3.10
+FROM python:3.10-buster
 
 # upgrade pip
 RUN pip install --upgrade pip
+
+RUN apt-get update
+RUN apt-get install -y python-enchant
 
 # permissions and nonroot user for tightened security
 RUN useradd -ms /bin/bash nonroot

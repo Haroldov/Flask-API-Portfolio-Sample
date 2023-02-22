@@ -33,8 +33,8 @@ python app/app.py
 Or you can use the docker container by running:
 
 ```sh
-docker build -t peak_power
-docker run -ti peak_power
+docker build -t peak_power .
+docker run -ti -p 5000:5000 peak_power
 ```
 
 # Start Application for Deployment
