@@ -1,6 +1,7 @@
 # Peak Power Challenge
 
 ![build](https://github.com/haroldov/peak_power/actions/workflows/python-app.yml/badge.svg)
+![tests](https://github.com/haroldov/peak_power/coverage.svg)
 
 # Folder Structure
 ```sh
