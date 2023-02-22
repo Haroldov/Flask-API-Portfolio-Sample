@@ -19,28 +19,47 @@ class TextService:
         pass
 
     @lru_cache()
-    def index_text(self, text):
+    def _index_text(self, text):
         return TextResource(text)
 
-    def parse_text(self, text: str, method: str):
-        """Parse text into bag of words.
+    def agg_words_count(self, text: str):
+        """Get bag of words from text.
 
         Args:
         text (str): The raw text to be indexed in mem.
-        method (str): Method to compute from raw text.
-            Can be one of the following count, length, full_length
 
+        Return:
+        list of tuples with the word in index 0 and the freq in index 1.
         """
 
-        parsed = self.index_text(text)
+        parsed = self._index_text(text)
 
+        return parsed.compute_count_and_sort()
 
-        if method == "count":
-            return parsed.compute_count_and_sort()
-        elif method == "length":
-            return parsed.compute_length_of_words()
-        elif method == "full_length":
-            return parsed.length
+    def agg_words_number(self, text: str):
+        """Get number of words from text.
 
+        Args:
+        text (str): The raw text to be indexed in mem.
 
-        raise NotImplementedError(f"method {method} not yet implemented")
+        Return:
+        Number of words as integer
+        """
+
+        parsed = self._index_text(text)
+
+        return parsed.compute_length_of_words()
+
+    def text_length(self, text: str):
+        """Get text length with and without spaces.
+
+        Args:
+        text (str): The raw text to be indexed in mem.
+
+        Return:
+        tuple, index 0 contains text full length and 1 length without spaces.
+        """
+
+        parsed = self._index_text(text)
+
+        return (parsed.length, parsed.length_no_spaces)

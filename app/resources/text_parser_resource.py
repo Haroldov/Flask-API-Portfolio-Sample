@@ -18,6 +18,7 @@ class TextResource:
         self.dictionary = enchant.Dict("en_US")
         self.text = text
         self.length = len(text)
+        self.length_no_spaces = len(text.replace(" ", ""))
 
     @property
     def text(self):
@@ -52,6 +53,4 @@ class TextResource:
         return sorted(list(zip(unique, counts)), key=lambda row: row[0])
 
     def compute_length_of_words(self):
-        """Compute count of the the words from text and sort alphabetically."""
-
         return len(self.text)
