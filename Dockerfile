@@ -22,6 +22,9 @@ ENV VIRTUAL_ENV=/home/app/venv
 RUN python -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN export FLASK_APP=app.py
+
+# English words dependency
+RUN apt-get install -y python-enchant
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
