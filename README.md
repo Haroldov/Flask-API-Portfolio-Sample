@@ -42,7 +42,7 @@ docker run -ti -p 5000:5000 peak_power
 You can start the app using the docker compose file by running:
 
 ```sh
-docker-compose up
+docker-compose up --build -d
 ```
 
 # Use the app
@@ -69,3 +69,12 @@ curl -X POST -H "Content-Type: application/json" localhost:5000/text-statistic -
   }
 }
 ```
+
+# Testing
+
+Feel free to run pytest:
+
+```sh
+pytest --cov-report term --cov=. app/tests/
+```
+
