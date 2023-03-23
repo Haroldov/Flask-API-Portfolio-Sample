@@ -1,5 +1,8 @@
 # Flask API Portfolio Example
 
+![build](https://github.com/haroldov/peak_power/actions/workflows/python-app.yml/badge.svg)
+![tests](https://github.com/Haroldov/peak_power/blob/master/coverage.svg)
+
 Hello! This is a Python API developed on top of flask and gunicorn as WSGI. This API exposures a couple of endpoints that process text in the following way:
 
 Given a paragraph as string -->
@@ -7,9 +10,6 @@ Given a paragraph as string -->
 * The function should return the output ordered alphabetically.
 * The API has a function to count the total number of words.
 * The API has a function to count the total number of characters with spaces and without spaces.
-
-![build](https://github.com/haroldov/peak_power/actions/workflows/python-app.yml/badge.svg)
-![tests](https://github.com/Haroldov/peak_power/blob/master/coverage.svg)
 
 # Folder Structure
 ```sh
