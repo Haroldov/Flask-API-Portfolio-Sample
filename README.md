@@ -12,6 +12,14 @@ Given a paragraph as string -->
 * The API has a function to count the total number of characters with spaces and without spaces.
 
 # Folder Structure
+
+The app folder contains all the source code in python needed to run the application.
+Then the API is divided in layers which are:
+
+* Routers: layer containing all HTTP validations and parsing.
+* Services: layer containing all main logic and response format.
+* Resources: layer containing all specific logic that the services are going to use.
+
 ```sh
 .
 ├── app.py
